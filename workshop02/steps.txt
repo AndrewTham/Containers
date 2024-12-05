@@ -1,0 +1,10 @@
+# Set up Namespace, ConfigMap and Secret
+kubectl create -f config.yaml
+
+# Deploy Database and Database Service
+kubectl apply -f database.yaml
+
+# Deploy App and App Service
+kubectl apply -f app.yaml
+
+kubectl port-forward svc/bggapp-svc -nbggns 8080:8080

@@ -1,0 +1,12 @@
+# Create Network
+## NOTE: If network is deleted, everything except the volume is deleted
+docker network create mynet
+
+# Create Volume
+docker volume create myvol
+
+# Setup Database (Remember not to use -p so database is not exposed)
+docker run -d --name mydb --network mynet --mount type=volume,src=myvol,dst=/var/lib/mysql -e MYSQL_ROOT_PASSWORD=changeit stackupiss/northwind-db:v1
+
+# Build App
+docker run -d -p 8080:3000 -e DB_HOST=mydb -e DB_USER=root -e DB_PASSWORD=changeit --network mynet --name myapp stackupiss/northwind-app:v1

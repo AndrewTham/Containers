@@ -1,0 +1,8 @@
+# Set Up Configurations
+1. kubectl apply -f config.yaml
+
+# Set Up Volume Claim
+2. kubectl apply -f volumes.yaml
+
+# Set Up App
+3. kubectl apply -f codeserver.yaml

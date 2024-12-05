@@ -1,0 +1,11 @@
+# Set Up Configurations
+1. kubectl apply -f config.yaml
+
+# Set Up Secret
+2. kubectl apply -f secret.yaml
+
+# Set Up App
+3. kubectl apply -f minio.yaml
+
+# Visit console
+4. Navigate to console-137.184.249.10.nip.io on browser
